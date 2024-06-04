@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>{data?.meta?.title}</title>
+	<title>{data?.meta?.title} by Joey Chilson</title>
 </svelte:head>
 
 <h1 class="title text-2xl font-semibold tracking-tighter">

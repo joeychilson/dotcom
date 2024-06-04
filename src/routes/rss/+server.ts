@@ -7,6 +7,7 @@ export const GET: RequestHandler = async () => {
 
 	const feed = new RSS({
 		title: 'Joey Chilson',
+		description: 'The personal website of Joey Chilson',
 		site_url: 'https://joeychilson.com',
 		feed_url: `https://joeychilson.com/rss`
 	});
