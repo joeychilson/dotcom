@@ -8,10 +8,10 @@
 	<title>{data?.meta?.title}</title>
 </svelte:head>
 
-<h1 class="title font-semibold text-2xl tracking-tighter">
+<h1 class="title text-2xl font-semibold tracking-tighter">
 	{data?.meta?.title}
 </h1>
-<div class="flex justify-between items-center mt-2 mb-8 text-sm">
+<div class="mb-8 mt-2 flex items-center justify-between text-sm">
 	<p class="text-sm text-neutral-600 dark:text-neutral-400">
 		{formatDate(data?.meta?.date)}
 	</p>

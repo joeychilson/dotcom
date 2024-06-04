@@ -15,7 +15,9 @@ async function parseMarkdown(content) {
 		.use(toMarkdownAST)
 		.use([remarkGfm, remarkSmartypants])
 		.use(toHtmlAST, { allowDangerousHtml: true })
-		.use(rehypeShiki, { theme: 'poimandres' })
+		.use(rehypeShiki, {
+			themes: { light: 'light-plus', dark: 'dark-plus' }
+		})
 		.use(toHtmlString, { allowDangerousHtml: true })
 		.process(content);
 	return processor.toString();

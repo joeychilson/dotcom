@@ -1,10 +1,13 @@
 <script>
+	import { ModeWatcher } from 'mode-watcher';
 	import Header from '$lib/components/header.svelte';
 	import '../app.css';
 </script>
 
-<main class="antialiased max-w-3xl mx-4 mt-8 lg:mx-auto">
-	<div class="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+<ModeWatcher />
+
+<main class="mx-4 mt-8 max-w-3xl antialiased lg:mx-auto">
+	<div class="mt-6 flex min-w-0 flex-auto flex-col px-2 md:px-0">
 		<Header />
 		<slot />
 	</div>
