@@ -4,6 +4,8 @@ import toHtmlAST from 'remark-rehype';
 import toHtmlString from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkSmartypants from 'remark-smartypants';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeShiki from '@shikijs/rehype';
 import matter from 'gray-matter';
 
@@ -15,6 +17,8 @@ async function parseMarkdown(content) {
 		.use(toMarkdownAST)
 		.use([remarkGfm, remarkSmartypants])
 		.use(toHtmlAST, { allowDangerousHtml: true })
+		.use(rehypeSlug)
+		.use(rehypeAutolinkHeadings, { behavior: 'wrap' })
 		.use(rehypeShiki, {
 			themes: { light: 'light-plus', dark: 'dark-plus' }
 		})
