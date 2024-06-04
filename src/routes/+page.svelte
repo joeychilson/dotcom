@@ -1,1 +1,6 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<script>
+	import Posts from '$lib/components/posts.svelte';
+	let { data } = $props();
+</script>
+
+<Posts posts={data.posts} />
