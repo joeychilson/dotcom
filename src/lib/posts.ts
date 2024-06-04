@@ -1,5 +1,6 @@
 export interface Post {
 	title: string;
+	description: string;
 	date: string;
 	slug: string;
 }
@@ -8,10 +9,13 @@ export async function getPostList(): Promise<Post[]> {
 	const postFiles = import.meta.glob('../../posts/*.md');
 	const posts = await Promise.all(
 		Object.entries(postFiles).map(async ([path, resolver]) => {
-			const { metadata } = (await resolver()) as { metadata: { title: string; date: string } };
+			const { metadata } = (await resolver()) as {
+				metadata: { title: string; description: string; date: string };
+			};
 			const fileName = (path.split('/').pop() ?? '').replace('.md', '');
 			return {
 				title: metadata.title,
+				description: metadata.description,
 				date: metadata.date,
 				slug: fileName
 			};

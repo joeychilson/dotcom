@@ -1,6 +1,8 @@
 <script>
 	import { ModeWatcher } from 'mode-watcher';
 	import Header from '$lib/components/header.svelte';
+	import Footer from '$lib/components/footer.svelte';
+
 	import '../app.css';
 </script>
 
@@ -10,5 +12,6 @@
 	<div class="mt-6 flex min-w-0 flex-auto flex-col px-2 md:px-0">
 		<Header />
 		<slot />
+		<Footer />
 	</div>
 </main>
