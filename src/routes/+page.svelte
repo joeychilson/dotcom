@@ -10,14 +10,14 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
 		rel="stylesheet"
 	/>
 </svelte:head>
 
-<div class="container">
+<div class="layout">
 	<header>
-		<h1 class="mono">Joey Chilson</h1>
+		<div class="logo mono">Joey Chilson</div>
 		<nav>
 			<a href="https://twitter.com/joeychilson" target="_blank" rel="noopener">Twitter</a>
 			<a href="https://github.com/joeychilson" target="_blank" rel="noopener">GitHub</a>
@@ -26,32 +26,40 @@
 	</header>
 
 	<main>
-		<h2>PROJECTS</h2>
-		<div class="projects">
-			{#await reposQuery}
-				<p class="loading">Loading...</p>
-			{:then repos}
-				{#if repos.length === 0}
-					<p class="loading">No projects yet</p>
-				{:else}
-					{#each repos as repo (repo.name)}
-						<a href={repo.html_url} target="_blank" rel="noopener" class="project">
-							<div class="project-header">
-								<span class="project-name">{repo.name}</span>
-								{#if repo.language}
-									<span class="project-lang mono">{repo.language}</span>
-								{/if}
-							</div>
-							{#if repo.description}
-								<p class="project-desc">{repo.description}</p>
-							{/if}
-						</a>
-					{/each}
-				{/if}
-			{:catch}
-				<p class="error">Failed to load projects</p>
-			{/await}
-		</div>
+		<section class="projects">
+			<div class="label mono">PROJECTS</div>
+
+			<div class="project-list">
+				{#await reposQuery}
+					<p class="loading">Loading...</p>
+				{:then repos}
+					{#if repos.length === 0}
+						<p class="loading">No projects found.</p>
+					{:else}
+						{#each repos as repo (repo.name)}
+							<a href={repo.html_url} target="_blank" rel="noopener" class="project-row">
+								<div class="project-main">
+									<div class="project-title">
+										<span class="project-name">{repo.name}</span>
+										{#if repo.stars > 0}
+											<span class="project-stars mono">{repo.stars} ★</span>
+										{/if}
+									</div>
+									<span class="project-desc">{repo.description || 'No description'}</span>
+								</div>
+								<div class="project-meta mono">
+									{#if repo.language}
+										<span>{repo.language}</span>
+									{/if}
+								</div>
+							</a>
+						{/each}
+					{/if}
+				{:catch}
+					<p class="error">Failed to load projects</p>
+				{/await}
+			</div>
+		</section>
 	</main>
 </div>
 
@@ -66,11 +74,11 @@
 		font-family:
 			'Inter',
 			-apple-system,
-			system-ui,
+			BlinkMacSystemFont,
 			sans-serif;
-		background: #fafafa;
-		color: #0a0a0a;
-		line-height: 1.6;
+		background-color: #ffffff;
+		color: #111;
+		line-height: 1.5;
 		-webkit-font-smoothing: antialiased;
 	}
 
@@ -78,122 +86,123 @@
 		font-family: 'JetBrains Mono', monospace;
 	}
 
-	.container {
-		max-width: 680px;
+	.layout {
+		max-width: 640px;
 		margin: 0 auto;
-		padding: 40px 24px 80px;
+		padding: 40px 24px;
 	}
 
 	header {
-		margin-bottom: 48px;
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
-		gap: 32px;
-		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 48px;
 	}
 
-	h1 {
-		font-size: 15px;
-		font-weight: 400;
-		letter-spacing: 0;
-		margin: 0;
+	.logo {
+		font-size: 14px;
+		font-weight: 500;
 	}
 
 	nav {
 		display: flex;
 		gap: 20px;
-		flex-wrap: wrap;
 	}
 
 	nav a {
-		font-size: 14px;
-		color: #0a0a0a;
+		color: #666;
 		text-decoration: none;
-		position: relative;
-		transition: color 0.2s ease;
-	}
-
-	nav a::after {
-		content: '';
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: #0a0a0a;
-		transition: width 0.2s ease;
+		font-size: 14px;
+		transition: color 0.2s;
 	}
 
 	nav a:hover {
-		color: #737373;
+		color: #000;
 	}
 
-	nav a:hover::after {
-		width: 100%;
+	.label {
+		font-size: 12px;
+		color: #999;
+		margin-bottom: 24px;
 	}
 
-	h2 {
-		font-size: 14px;
-		font-weight: 500;
-		color: #737373;
-		margin-bottom: 32px;
-		letter-spacing: 0.02em;
-	}
-
-	.projects {
+	.project-list {
 		display: flex;
 		flex-direction: column;
-		gap: 32px;
 	}
 
-	.project {
-		display: block;
+	.project-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
 		text-decoration: none;
 		color: inherit;
-		transition: transform 0.2s ease;
+		padding: 16px 0;
+		border-top: 1px solid #f0f0f0;
+		transition: opacity 0.2s;
+		gap: 24px;
 	}
 
-	.project:hover {
-		transform: translateX(4px);
+	.project-row:last-child {
+		border-bottom: 1px solid #f0f0f0;
 	}
 
-	.project:hover .project-name {
-		text-decoration: underline;
+	.project-row:hover {
+		opacity: 0.6;
 	}
 
-	.project-header {
+	.project-main {
 		display: flex;
-		align-items: baseline;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.project-title {
+		display: flex;
+		align-items: center;
 		gap: 8px;
-		margin-bottom: 8px;
 	}
 
 	.project-name {
-		font-size: 15px;
 		font-weight: 500;
-		letter-spacing: -0.01em;
-		transition: text-decoration 0.2s ease;
+		font-size: 15px;
 	}
 
-	.project-lang {
+	.project-stars {
 		font-size: 12px;
-		color: #a3a3a3;
+		color: #666;
 	}
 
 	.project-desc {
 		font-size: 14px;
-		color: #525252;
-		line-height: 1.5;
+		color: #666;
+		max-width: 400px;
 	}
 
-	.loading {
-		font-size: 14px;
-		color: #a3a3a3;
+	.project-meta {
+		font-size: 12px;
+		color: #999;
+		text-align: right;
+		flex-shrink: 0;
+		display: flex;
+		gap: 12px;
 	}
 
+	.loading,
 	.error {
+		color: #999;
 		font-size: 14px;
-		color: #dc2626;
+		padding: 20px 0;
+	}
+
+	@media (max-width: 500px) {
+		.project-row {
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.project-meta {
+			text-align: left;
+		}
 	}
 </style>
