@@ -1,7 +1,17 @@
 <script>
 	import { getGitHubRepos } from '$lib/github.remote';
+	import caloriesLogo from '$lib/assets/calories.png';
 
 	const reposQuery = getGitHubRepos();
+
+	const applications = [
+		{
+			name: 'Calories',
+			description: 'A simple nutrition tracking app with a helpful assistant.',
+			url: 'https://burncalories.app',
+			logo: caloriesLogo
+		}
+	];
 </script>
 
 <svelte:head>
@@ -26,6 +36,22 @@
 	</header>
 
 	<main>
+		<section class="applications">
+			<div class="label mono">APPLICATIONS</div>
+
+			<div class="app-list">
+				{#each applications as app (app.name)}
+					<a href={app.url} target="_blank" rel="noopener" class="app-row">
+						<img src={app.logo} alt="{app.name} logo" class="app-logo" />
+						<div class="app-main">
+							<span class="app-name">{app.name}</span>
+							<span class="app-desc">{app.description}</span>
+						</div>
+					</a>
+				{/each}
+			</div>
+		</section>
+
 		<section class="projects">
 			<div class="label mono">PROJECTS</div>
 
@@ -138,13 +164,8 @@
 		text-decoration: none;
 		color: inherit;
 		padding: 16px 0;
-		border-top: 1px solid #f0f0f0;
 		transition: opacity 0.2s;
 		gap: 24px;
-	}
-
-	.project-row:last-child {
-		border-bottom: 1px solid #f0f0f0;
 	}
 
 	.project-row:hover {
@@ -193,6 +214,52 @@
 		color: #999;
 		font-size: 14px;
 		padding: 20px 0;
+	}
+
+	.applications {
+		margin-bottom: 32px;
+	}
+
+	.app-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.app-row {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		text-decoration: none;
+		color: inherit;
+		padding: 8px 0;
+		transition: opacity 0.2s;
+	}
+
+	.app-row:hover {
+		opacity: 0.6;
+	}
+
+	.app-logo {
+		width: 48px;
+		height: 48px;
+		border-radius: 10px;
+		flex-shrink: 0;
+	}
+
+	.app-main {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.app-name {
+		font-weight: 500;
+		font-size: 15px;
+	}
+
+	.app-desc {
+		font-size: 14px;
+		color: #666;
 	}
 
 	@media (max-width: 500px) {
