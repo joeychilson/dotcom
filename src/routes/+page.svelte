@@ -1,15 +1,22 @@
 <script>
 	import { getGitHubRepos } from '$lib/github.remote';
-	import caloriesLogo from '$lib/assets/calories.png';
+	import caloriesLogo from '$lib/assets/calories.webp';
+	import explainimfive from '$lib/assets/explainimfive.webp';
 
 	const reposQuery = getGitHubRepos();
 
 	const applications = [
 		{
 			name: 'Calories',
-			description: 'A simple nutrition tracking app with a helpful assistant.',
-			url: 'https://burncalories.app',
+			description: 'Simple nutrition tracking.',
+			url: 'https://burncalories.now',
 			logo: caloriesLogo
+		},
+		{
+			name: "explain i'm five",
+			description: 'Make anything understandable.',
+			url: 'https://explainimfive.com',
+			logo: explainimfive
 		}
 	];
 </script>
