@@ -7,12 +7,6 @@
 
 	const applications = [
 		{
-			name: 'Calories',
-			description: 'Simple nutrition tracking.',
-			url: 'https://burncalories.now',
-			logo: caloriesLogo
-		},
-		{
 			name: "explain i'm five",
 			description: 'Make anything understandable.',
 			url: 'https://explainimfive.com',
