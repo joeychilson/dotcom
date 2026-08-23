@@ -9,6 +9,12 @@ export const site = {
   email: "mailto:joeychilson@outlook.com",
   projects: [
     {
+      name: "decimal",
+      url: "https://github.com/joeychilson/decimal",
+      description: "An arbitrary-precision decimal library.",
+      tag: "Go",
+    },
+    {
       name: "dataframe",
       url: "https://github.com/joeychilson/dataframe",
       description: "An immutable, column-oriented dataframe library.",
