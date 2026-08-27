@@ -3,11 +3,10 @@ import { error } from "@sveltejs/kit";
 import { writings, writingSlugs } from "./writing.server.js";
 
 export const listWritings = prerender(async () =>
-  (await writings).map(({ slug, frontmatter, formattedDate, minutes }) => ({
+  (await writings).map(({ slug, frontmatter, formattedDate }) => ({
     slug,
     frontmatter,
     formattedDate,
-    minutes,
   })),
 );
 
