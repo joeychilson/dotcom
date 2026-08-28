@@ -20,5 +20,11 @@ export const site = {
       description: "An immutable, column-oriented dataframe library.",
       tag: "Go",
     },
+    {
+      name: "pgmq",
+      url: "https://github.com/joeychilson/pgmq",
+      description: "A library for the PostgreSQL message queue extension.",
+      tag: "Go",
+    },
   ],
 };
