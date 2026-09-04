@@ -21,9 +21,9 @@ export const site = {
       tag: "Go",
     },
     {
-      name: "infergo",
-      url: "https://github.com/joeychilson/infergo",
-      description: "A library for running ONNX models with runtime management.",
+      name: "onnxcraft",
+      url: "https://github.com/joeychilson/onnxcraft",
+      description: "A library for production ONNX inference.",
       tag: "Go",
     },
     {
