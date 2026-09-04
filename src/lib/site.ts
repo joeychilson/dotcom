@@ -21,6 +21,12 @@ export const site = {
       tag: "Go",
     },
     {
+      name: "infergo",
+      url: "https://github.com/joeychilson/infergo",
+      description: "A library for running ONNX models with runtime management.",
+      tag: "Go",
+    },
+    {
       name: "pgmq",
       url: "https://github.com/joeychilson/pgmq",
       description: "A PostgreSQL message queue extension client.",
