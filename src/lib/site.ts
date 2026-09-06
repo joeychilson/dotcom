@@ -29,7 +29,8 @@ export const site = {
     {
       name: "overwatch",
       url: "https://github.com/joeychilson/overwatch",
-      description: "An app for exploring coding-agent sessions, token usage, and costs on your desktop.",
+      description:
+        "An app for exploring coding-agent sessions, token usage, and costs on your desktop.",
       tag: "TypeScript",
     },
     {
