@@ -27,6 +27,12 @@ export const site = {
       tag: "Go",
     },
     {
+      name: "overwatch",
+      url: "https://github.com/joeychilson/overwatch",
+      description: "An app for exploring coding-agent sessions, token usage, and costs on your desktop.",
+      tag: "TypeScript",
+    },
+    {
       name: "pgmq",
       url: "https://github.com/joeychilson/pgmq",
       description: "A PostgreSQL message queue extension client for Go.",
