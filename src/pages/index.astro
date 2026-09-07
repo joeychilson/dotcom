@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import Sea from '../components/Sea.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Icon from '../components/Icon.astro';
+import { site, projects } from '../site';
+import { getPosts, postPath } from '../posts';
+
+const posts = await getPosts({ preview: import.meta.env.DEV });
+---
+
+<Base>
+  <main id="main" class="personal-page">
+    <div class="personal-hero">
+      <div class="hero-copy">
+        <header class="personal-header reveal arrival-intro">
+          <h1>{site.name}</h1><p>{site.tagline}</p>
+          <SocialLinks />
+        </header>
+        <div class="bio reveal arrival-bio">
+          <p>{site.bio}</p>
+        </div>
+      </div>
+      <div class="hero-art reveal arrival-art"><Sea /></div>
+    </div>
+    <section
+      id="built"
+      class="personal-section reveal arrival-projects"
+      aria-labelledby="built-title"
+    >
+      <h2 id="built-title">Projects</h2>
+      <ul class="project-list">
+        {
+          projects.map((project) => (
+            <li>
+              <a href={project.href}>
+                <span class="link-copy">
+                  <span class="project-name">{project.title}</span>
+                  <span class="project-description">{project.description}</span>
+                </span>
+                <span class="row-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section
+      id="writing"
+      class="personal-section reveal arrival-writing"
+      aria-labelledby="writing-title"
+    >
+      <div class="writing-heading">
+        <h2 id="writing-title">Writing</h2><a
+          class="feed-link"
+          href="/rss.xml"
+          aria-label="Subscribe to writing via RSS"
+          ><Icon name="rss" /><span>RSS</span></a
+        >
+      </div>
+      {
+        posts.length ? (
+          <ul class="writing-list">
+            {posts.map((post) => (
+              <li>
+                <a href={postPath(post.id)}>
+                  <span class="link-copy">{post.data.title}</span>
+                  {post.data.draft && <span class="draft-label">Draft</span>}
+                  <span class="row-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="empty-writing">Nothing published yet.</p>
+        )
+      }
+    </section>
+  </main>
+</Base>

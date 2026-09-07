@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Sea from '../components/Sea.astro';
+---
+
+<Base
+  title="Page not found"
+  description="A little off course. Let’s get you back home."
+  noindex
+>
+  <main id="main" class="lost-page">
+    <div class="error-scene reveal arrival-art">
+      <Sea />
+    </div>
+    <div class="lost-copy reveal arrival-intro">
+      <h1>A little off course.</h1>
+      <p>There’s no page out here.<br />Let’s head back to familiar waters.</p>
+      <a class="homeward" href="/"
+        ><span aria-hidden="true">←</span> Back home</a
+      >
+    </div>
+  </main>
+</Base>

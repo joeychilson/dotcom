@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Sailboat</title>
+  <style>
+    .main { fill: #697ba5; }
+    .jib { fill: #a3b0cd; }
+    .hull { fill: #38485f; }
+    @media (prefers-color-scheme: dark) {
+      .main { fill: #c4d0ee; }
+      .jib { fill: #8d9fc5; }
+      .hull { fill: #dce4f4; }
+    }
+  </style>
+  <path class="main" d="M17 3 3 21h14Z"/>
+  <path class="jib" d="m20 9 9 12h-9Z"/>
+  <path class="hull" d="M3 24h26l-5 5H8Z"/>
+</svg>

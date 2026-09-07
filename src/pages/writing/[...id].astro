@@ -1,0 +1,56 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getPosts, isPublished, postPath } from '../../posts';
+import { site } from '../../site';
+export async function getStaticPaths() {
+  const posts = await getPosts({ preview: import.meta.env.DEV });
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+interface Props {
+  post: CollectionEntry<'writing'>;
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZone: 'UTC' }).format(
+    date,
+  );
+---
+
+<Base
+  canonicalPath={postPath(post.id)}
+  title={post.data.title}
+  description={post.data.description}
+  article
+  date={post.data.date}
+  updated={post.data.updated}
+  noindex={!isPublished(post)}
+>
+  <main id="main" class="personal-page essay-page">
+    <a class="back-link" href="/">← {site.name}</a>
+    <article class="essay">
+      <div class="essay-label">
+        {post.data.draft ? 'Draft · ' : ''}<time
+          datetime={post.data.date.toISOString()}
+          >{formatDate(post.data.date)}</time
+        >
+      </div>
+      <h1>{post.data.title}</h1>
+      <div class="prose"><Content /></div>
+      {
+        post.data.updated && (
+          <p class="updated-date">
+            Updated{' '}
+            <time datetime={post.data.updated.toISOString()}>
+              {formatDate(post.data.updated)}
+            </time>
+          </p>
+        )
+      }
+    </article>
+    <footer class="personal-footer">
+      <a href="/#writing">All writing</a><a href="/rss.xml">RSS</a>
+    </footer>
+  </main>
+</Base>

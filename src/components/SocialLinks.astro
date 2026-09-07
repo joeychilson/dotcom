@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../site';
+const links = [
+  { label: 'GitHub', href: site.github, icon: 'github' as const },
+  { label: 'X', href: site.x, icon: 'x' as const },
+  { label: 'Email', href: `mailto:${site.email}`, icon: 'email' as const },
+];
+---
+
+<nav class="social-links" aria-label="Connect">
+  {
+    links.map((link) => (
+      <a href={link.href} rel={link.icon === 'email' ? undefined : 'me'}>
+        <Icon name={link.icon} />
+        <span>{link.label}</span>
+      </a>
+    ))
+  }
+</nav>
