@@ -12,15 +12,10 @@ const posts = await getPosts({ preview: import.meta.env.DEV });
 <Base>
   <main id="main" class="personal-page">
     <div class="personal-hero">
-      <div class="hero-copy">
-        <header class="personal-header reveal arrival-intro">
-          <h1>{site.name}</h1><p>{site.tagline}</p>
-          <SocialLinks />
-        </header>
-        <div class="bio reveal arrival-bio">
-          <p>{site.bio}</p>
-        </div>
-      </div>
+      <header class="personal-header reveal arrival-intro">
+        <h1>{site.name}</h1><p>{site.tagline}</p>
+        <SocialLinks />
+      </header>
       <div class="hero-art reveal arrival-art"><Sea /></div>
     </div>
     <section

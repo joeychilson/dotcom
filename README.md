@@ -18,7 +18,7 @@ No environment variables are needed. Open the local URL printed in the terminal.
 
 ## Content
 
-- `src/site.ts` — name, tagline, bio, links, and projects.
+- `src/site.ts` — name, tagline, links, and projects.
 - `writings/` — Markdown posts.
 - `src/styles/global.css` — styles and responsive layout.
 - `src/scripts/sea.ts` — sailboat and sun/moon animation.

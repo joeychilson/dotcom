@@ -300,10 +300,6 @@ body {
   width: min(calc(100% + 58px), calc(50% + 50vw - 100px));
   min-height: 230px;
 }
-.hero-copy {
-  min-width: 0;
-  padding: 7px 0;
-}
 .personal-header h1 {
   margin: 0 0 12px;
   font-size: 29px;
@@ -326,26 +322,15 @@ body {
 }
 .hero-art .sailboat {
   width: 330px;
-  margin: -38px 0 0 -42px;
+  position: absolute;
+  top: 50%;
+  /* Center the full scene, including the water, beside the text group. */
+  transform: translateY(-50%);
+  margin: 0 0 0 -42px;
 }
 .hero-art .motion-control {
   right: 53px;
   bottom: 42px;
-}
-.bio {
-  margin-top: 20px;
-  color: var(--secondary-text);
-  max-width: 350px;
-}
-.bio p {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: -0.02em;
-  text-wrap: pretty;
-}
-.arrival-bio {
-  animation-delay: 0.15s;
 }
 .arrival-projects {
   animation-delay: 0.23s;
@@ -376,34 +361,28 @@ body {
     grid-template-columns: minmax(0, 1fr) 155px;
     gap: 12px;
     width: calc(100% + 10px);
-    min-height: 210px;
+    min-height: 150px;
   }
   .personal-header h1 {
     font-size: 26px;
   }
   .hero-art {
     width: 165px;
-    height: 205px;
+    height: 150px;
   }
   .hero-art .sailboat {
     width: 215px;
-    margin: -14px 0 0 -45px;
+    margin: 0 0 0 -45px;
   }
   .hero-art .motion-control {
     right: 45px;
     bottom: 30px;
-  }
-  .bio {
-    margin-top: 18px;
   }
   .essay-page {
     padding-top: 82px;
   }
 }
 @media (max-width: 480px) {
-  .hero-copy {
-    padding-top: 14px;
-  }
   .personal-header h1 {
     font-size: 24px;
     letter-spacing: -0.05em;
@@ -413,8 +392,7 @@ body {
   }
   .hero-art {
     width: 120px;
-    height: 180px;
-    margin-top: 5px;
+    height: 110px;
   }
   .hero-art .sailboat {
     width: 170px;
@@ -424,38 +402,10 @@ body {
     right: 36px;
     bottom: 17px;
   }
-  .bio {
-    margin-top: 19px;
-    max-width: none;
-  }
-  .bio p {
-    font-size: 14px;
-    line-height: 1.85;
-  }
-  .personal-hero .hero-copy {
-    display: contents;
-  }
-  .personal-hero .personal-header {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-  }
-  .personal-hero .hero-art {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .personal-hero .bio {
-    grid-column: 1/-1;
-    grid-row: 2;
-    margin-top: 0;
-    max-width: 340px;
-  }
   .personal-hero {
     grid-template-columns: minmax(0, 1fr) 112px;
     gap: 8px;
-    align-items: start;
     min-height: 0;
-    row-gap: 20px;
   }
 }
 ascii-sea {
