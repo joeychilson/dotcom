@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'Cedarville Cursive';
+  src: url(/fonts/cedarville-cursive-normal.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: Inter;
   src: url(/fonts/inter-normal.woff2) format('woff2');
   font-weight: 100 900;
@@ -302,10 +309,11 @@ body {
 }
 .personal-header h1 {
   margin: 0 0 12px;
-  font-size: 29px;
-  font-weight: 500;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 38px;
+  font-weight: 400;
   line-height: 1.2;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
 }
 .personal-header p {
   margin: 0;
@@ -364,7 +372,7 @@ body {
     min-height: 150px;
   }
   .personal-header h1 {
-    font-size: 26px;
+    font-size: 36px;
   }
   .hero-art {
     width: 165px;
@@ -384,8 +392,7 @@ body {
 }
 @media (max-width: 480px) {
   .personal-header h1 {
-    font-size: 24px;
-    letter-spacing: -0.05em;
+    font-size: 34px;
   }
   .personal-header p {
     font-size: 15px;

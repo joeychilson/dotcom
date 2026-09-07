@@ -79,4 +79,4 @@ See the [Cloudflare Astro guide](https://developers.cloudflare.com/workers/frame
 
 ## License
 
-[MIT](LICENSE). Inter is included under the [SIL Open Font License](public/fonts/LICENSE.txt).
+[MIT](LICENSE). Inter and Cedarville Cursive are included under the SIL Open Font License; see the [Inter license](public/fonts/LICENSE.txt) and [Cedarville Cursive license](public/fonts/CEDARVILLE-CURSIVE-LICENSE.txt).
