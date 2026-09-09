@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <title>Sailboat</title>
+  <title>City skyline</title>
   <style>
-    .main { fill: #697ba5; }
-    .jib { fill: #a3b0cd; }
-    .hull { fill: #38485f; }
+    .stone { fill: #49566d; }
+    .glass { fill: #365c77; }
+    .brick { fill: #75564a; }
+    .windows { fill: #fcfcfc; }
     @media (prefers-color-scheme: dark) {
-      .main { fill: #c4d0ee; }
-      .jib { fill: #8d9fc5; }
-      .hull { fill: #dce4f4; }
+      .stone { fill: #9fadc5; }
+      .glass { fill: #8badcc; }
+      .brick { fill: #b39783; }
+      .windows { fill: #151618; }
     }
   </style>
-  <path class="main" d="M17 3 3 21h14Z"/>
-  <path class="jib" d="m20 9 9 12h-9Z"/>
-  <path class="hull" d="M3 24h26l-5 5H8Z"/>
+  <path class="stone" d="M11 29V10h2V7h2V3h2v4h2v3h2v19Z"/>
+  <path class="glass" d="M23 29V15l3-5 3 5v14Z"/>
+  <path class="brick" d="M3 29V17h6v12Z"/>
+  <path class="windows" d="M14 12h1v2h-1zm3 0h1v2h-1zm-3 4h1v2h-1zm3 0h1v2h-1zm-3 4h1v2h-1zm3 0h1v2h-1zm-3 4h1v2h-1zm3 0h1v2h-1zM25 17h2v1h-2zm0 4h2v1h-2zm0 4h2v1h-2zM5 19h2v2H5zm0 5h2v2H5z"/>
 </svg>

@@ -1,0 +1,56 @@
+<ascii-skyline>
+  <figure class="skyline">
+    <div class="skyline-drift">
+      <canvas
+        width="540"
+        height="400"
+        role="img"
+        aria-label="An animated ASCII city skyline with detailed towers, trees, and passing cars"
+      ></canvas>
+    </div>
+    <button
+      class="motion-control"
+      hidden
+      data-pause
+      aria-pressed="false"
+      aria-label="Pause skyline animation"
+      type="button"
+    >
+      <svg viewBox="0 0 16 16" aria-hidden="true">
+        <path data-pause-icon d="M4 3h3v10H4zm5 0h3v10H9z"></path>
+        <path data-play d="m5 2 9 6-9 6z"></path>
+      </svg>
+    </button>
+    <noscript
+      ><pre
+        class="no-script-art"
+        role="img"
+        aria-label="A city skyline above a tree-lined street">{`         .         ☾
+         |     _
+     _  |:|   |:|  _
+  _ |:| |:| _ |:| |:|
+ |:||:|_|:||:||:|_|:|
+ ─── o─o ──── o─o ──`}</pre><style
+      >
+        ascii-skyline canvas,
+        ascii-skyline button {
+          display: none;
+        }
+      </style></noscript
+    >
+  </figure>
+</ascii-skyline>
+<script>
+  import { mountSkyline } from '../scripts/skyline';
+  class AsciiSkyline extends HTMLElement {
+    cleanup?: () => void;
+    connectedCallback() {
+      this.cleanup = mountSkyline(this);
+    }
+    disconnectedCallback() {
+      this.cleanup?.();
+    }
+  }
+  if (!customElements.get('ascii-skyline'))
+    customElements.define('ascii-skyline', AsciiSkyline);
+</script>

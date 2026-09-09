@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Sea from '../components/Sea.astro';
+import Skyline from '../components/Skyline.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Icon from '../components/Icon.astro';
 import { site, projects } from '../site';
@@ -16,7 +16,7 @@ const posts = await getPosts({ preview: import.meta.env.DEV });
         <h1>{site.name}</h1><p>{site.tagline}</p>
         <SocialLinks />
       </header>
-      <div class="hero-art reveal arrival-art"><Sea /></div>
+      <div class="hero-art reveal arrival-art"><Skyline /></div>
     </div>
     <section
       id="built"

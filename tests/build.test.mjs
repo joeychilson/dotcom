@@ -152,7 +152,7 @@ test(
       assert.match(missing, /noindex, nofollow/);
       assert.doesNotMatch(missing, /rel="canonical"/);
       assert.match(missing, /A little off course/);
-      assert.match(missing, /An ASCII sailboat floating on shimmering water/);
+      assert.match(missing, /An animated ASCII city skyline/);
       assert.match(missing, /class="homeward" href="\/"/);
       // This should remain a static site, without React hydration payloads.
       assert.doesNotMatch(home, /<astro-island|react-dom/);

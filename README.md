@@ -21,7 +21,7 @@ No environment variables are needed. Open the local URL printed in the terminal.
 - `src/site.ts` — name, tagline, links, and projects.
 - `writings/` — Markdown posts.
 - `src/styles/global.css` — styles and responsive layout.
-- `src/scripts/sea.ts` — sailboat and sun/moon animation.
+- `src/scripts/skyline.ts` — city skyline and sun/moon animation.
 - `astro.config.mjs` — domain and build configuration.
 - `public/` — icons, fonts, and the 1200 × 630 sharing image.
 

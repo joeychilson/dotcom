@@ -42,30 +42,25 @@ button {
   background: var(--selection-background);
   color: var(--selection-text);
 }
-.sailboat {
-  width: 240px;
-  margin: -21px 0 -20px -32px;
+.skyline {
+  margin: 0;
   position: relative;
   --drift-x: 0px;
   --drift-y: 0px;
 }
-.sailboat-drift {
+.skyline-drift {
   transform: translate3d(var(--drift-x), var(--drift-y), 0);
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.sailboat canvas {
+.skyline canvas {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 540/480;
-  filter: var(--boat-filter);
-  transition:
-    filter 0.5s ease,
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  aspect-ratio: 540/400;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.sailboat:hover canvas {
+.skyline:hover canvas {
   transform: scale(1.035);
-  filter: var(--boat-hover-filter);
 }
 .motion-control {
   position: absolute;
@@ -237,8 +232,6 @@ button {
   color-scheme: light;
   --selection-background: #e6eafa;
   --selection-text: #353c59;
-  --boat-filter: none;
-  --boat-hover-filter: saturate(1.15);
   --secondary-text: #696f78;
   --quiet-text: #6d727c;
   --link-hover: #576d9e;
@@ -248,8 +241,6 @@ button {
   color-scheme: dark;
   --selection-background: #35415b;
   --selection-text: #ecf0fa;
-  --boat-filter: brightness(1.8) saturate(0.75);
-  --boat-hover-filter: brightness(1.95) saturate(0.9);
   --background: #151618;
   --foreground: #dce0e7;
   --muted: #22252b;
@@ -328,17 +319,17 @@ body {
   height: 230px;
   position: relative;
 }
-.hero-art .sailboat {
+.hero-art .skyline {
   width: 330px;
   position: absolute;
   top: 50%;
-  /* Center the full scene, including the water, beside the text group. */
+  /* Center the complete city scene beside the introduction. */
   transform: translateY(-50%);
   margin: 0 0 0 -42px;
 }
 .hero-art .motion-control {
-  right: 53px;
-  bottom: 42px;
+  right: 22px;
+  bottom: 8px;
 }
 .arrival-projects {
   animation-delay: 0.23s;
@@ -347,12 +338,6 @@ body {
   animation-delay: 0.31s;
 }
 @media (max-width: 650px) {
-  .sailboat {
-    width: 215px;
-    margin-left: -28px;
-    margin-top: -20px;
-    margin-bottom: -13px;
-  }
   .personal-section {
     width: auto;
     margin-top: 36px;
@@ -378,13 +363,13 @@ body {
     width: 165px;
     height: 150px;
   }
-  .hero-art .sailboat {
-    width: 215px;
-    margin: 0 0 0 -45px;
+  .hero-art .skyline {
+    width: 225px;
+    margin: 0 0 0 -26px;
   }
   .hero-art .motion-control {
-    right: 45px;
-    bottom: 30px;
+    right: 12px;
+    bottom: 0;
   }
   .essay-page {
     padding-top: 82px;
@@ -401,13 +386,13 @@ body {
     width: 120px;
     height: 110px;
   }
-  .hero-art .sailboat {
-    width: 170px;
-    margin: 0 0 0 -42px;
+  .hero-art .skyline {
+    width: 155px;
+    margin: 0 0 0 -17px;
   }
   .hero-art .motion-control {
-    right: 36px;
-    bottom: 17px;
+    right: 4px;
+    bottom: -10px;
   }
   .personal-hero {
     grid-template-columns: minmax(0, 1fr) 112px;
@@ -415,7 +400,7 @@ body {
     min-height: 0;
   }
 }
-ascii-sea {
+ascii-skyline {
   display: block;
 }
 .theme-toggle {
@@ -629,13 +614,13 @@ ascii-sea {
   width: min(390px, 100%);
   margin-bottom: -5px;
 }
-.error-scene .sailboat {
+.error-scene .skyline {
   width: 100%;
   margin: 0;
 }
 .error-scene .motion-control {
-  right: 44px;
-  bottom: 31px;
+  right: 26px;
+  bottom: 12px;
 }
 .lost-copy h1 {
   font-size: clamp(26px, 5vw, 31px);
@@ -690,8 +675,6 @@ ascii-sea {
     color-scheme: dark;
     --selection-background: #35415b;
     --selection-text: #ecf0fa;
-    --boat-filter: brightness(1.8) saturate(0.75);
-    --boat-hover-filter: brightness(1.95) saturate(0.9);
     --background: #151618;
     --foreground: #dce0e7;
     --muted: #22252b;
@@ -722,8 +705,8 @@ ascii-sea {
   display: block;
 }
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
-  .sailboat-drift,
-  .sailboat:hover canvas,
+  .skyline-drift,
+  .skyline:hover canvas,
   .personal-section li a:hover .link-copy,
   .personal-section li a:focus-visible .link-copy,
   .back-link:hover,
