@@ -378,6 +378,9 @@ body {
   }
 }
 @media (max-width: 480px) {
+  .personal-page {
+    padding-top: 24px;
+  }
   .personal-header h1 {
     font-size: 34px;
   }
