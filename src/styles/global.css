@@ -400,6 +400,9 @@ body {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
   }
+  .personal-hero + .personal-section {
+    margin-top: 8px;
+  }
 }
 ascii-skyline {
   display: block;
