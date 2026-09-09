@@ -351,21 +351,23 @@ body {
     padding-top: 88px;
   }
   .personal-hero {
-    grid-template-columns: minmax(0, 1fr) 155px;
-    gap: 12px;
-    width: calc(100% + 10px);
-    min-height: 150px;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    gap: 8px;
+    width: 100%;
+    min-height: 176px;
   }
   .personal-header h1 {
     font-size: 36px;
   }
   .hero-art {
-    width: 165px;
-    height: 150px;
+    width: 100%;
+    height: 176px;
   }
   .hero-art .skyline {
-    width: 225px;
-    margin: 0 0 0 -26px;
+    width: 250px;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
   }
   .hero-art .motion-control {
     right: 12px;
@@ -379,24 +381,23 @@ body {
   .personal-header h1 {
     font-size: 34px;
   }
-  .personal-header p {
-    font-size: 15px;
-  }
   .hero-art {
-    width: 120px;
-    height: 110px;
+    width: min(100%, 280px);
+    height: auto;
+    justify-self: center;
   }
   .hero-art .skyline {
-    width: 155px;
-    margin: 0 0 0 -17px;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
   }
   .hero-art .motion-control {
-    right: 4px;
-    bottom: -10px;
+    right: 18px;
   }
   .personal-hero {
-    grid-template-columns: minmax(0, 1fr) 112px;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
     min-height: 0;
   }
 }
