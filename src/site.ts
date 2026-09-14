@@ -11,7 +11,7 @@ export const projects = [
   {
     title: 'Overwatch',
     description:
-      'An app for exploring coding-agent sessions, token usage, and costs.',
+      'An app for exploring your agent sessions, token usage, costs, and subscription limits.',
     href: 'https://github.com/joeychilson/overwatch',
   },
 ];
