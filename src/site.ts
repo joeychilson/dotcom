@@ -14,4 +14,9 @@ export const projects = [
       'An app for exploring your agent sessions, token usage, costs, and subscription limits.',
     href: 'https://github.com/joeychilson/overwatch',
   },
+  {
+    title: 'agt',
+    description: 'A minimal terminal coding agent.',
+    href: 'https://github.com/joeychilson/agt',
+  },
 ];
