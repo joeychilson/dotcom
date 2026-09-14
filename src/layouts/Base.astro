@@ -25,7 +25,7 @@ const {
 
 const canonical = new URL(canonicalPath, Astro.site);
 const socialImage = new URL('/social-card.png', Astro.site);
-const imageAlt = `${site.name} — ${site.tagline} An ASCII sailboat on the water.`;
+const imageAlt = `${site.name} — ${site.tagline} An ASCII city skyline with towers, trees, and passing cars.`;
 const pageTitle = title === site.name ? title : `${title} — ${site.name}`;
 const isPrivate = noindex || import.meta.env.DEV;
 const jsonLd = article
