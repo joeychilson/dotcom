@@ -9,14 +9,14 @@ export const site = {
 
 export const projects = [
   {
+    title: 'agt',
+    description: 'A coding agent for your terminal.',
+    href: 'https://github.com/joeychilson/agt',
+  },
+  {
     title: 'Overwatch',
     description:
       'An app for exploring your agent sessions, token usage, costs, and subscription limits.',
     href: 'https://github.com/joeychilson/overwatch',
-  },
-  {
-    title: 'agt',
-    description: 'A minimal terminal coding agent.',
-    href: 'https://github.com/joeychilson/agt',
   },
 ];
